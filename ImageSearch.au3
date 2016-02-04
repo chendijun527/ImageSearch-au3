@@ -34,7 +34,7 @@ EndFunc   ;==>_ImageSearch
 Func _ImageSearchArea($findImage, $resultPosition, $x1, $y1, $right, $bottom, ByRef $x, ByRef $y, $tolerance)
 	;MsgBox(0,"asd","" & $x1 & " " & $y1 & " " & $right & " " & $bottom)
 	If $tolerance > 0 Then $findImage = "*" & $tolerance & " " & $findImage
-	$result = DllCall(@ScriptDir & "/lib/ImageSearchDLL.dll", "str", "ImageSearch", "int", $x1, "int", $y1, "int", $right, "int", $bottom, "str", $findImage)
+	$result = DllCall("ImageSearchDLL.dll", "str", "ImageSearch", "int", $x1, "int", $y1, "int", $right, "int", $bottom, "str", $findImage)
 
 	; If error exit
 	If $result[0] = "0" Then Return 0
